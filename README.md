@@ -161,20 +161,22 @@ npm run dev
   - Generating boilerplates for modular architecture (Controllers, Services, Routes separation).
   - Building Docker configs (`Dockerfile` for both services and `docker-compose.yml`).
   - Resolving TypeScript import errors (`verbatimModuleSyntax` / `ts(1484)`).
-  - Refining responsive layouts with CSS Modules.
 - **2–3 example prompts:**
   1. \_"Я починаю full-stack проєкт з нуля. У мене є дві порожні папки: /backend та /frontend.
      Мені потрібна ТІЛЬКИ початкова збірка та конфігурація оточення (без бізнес-логіки та CRUD-функціоналу).
      Для папки /backend:
-- Ініціалізуй Node.js + TypeScript + Express.js.
-- Надай базовий package.json зі скриптами ("build", "start", "dev") та необхідними залежностями (express, cors, dotenv, ts-node-dev, typescript, @types/node, @types/express, @types/cors).
-- Надай tsconfig.json.
-- Надай інструкцію і конфіг для ініціалізації Prisma з провайдером SQLite.
-- Створи мінімальний src/index.ts, який просто слухає порт 4000 і повертає статус сервера.
-  Для папки /frontend:
-- Напиши одну консольну команду для швидкого розгортання React + TypeScript (через Vite) у папку frontend.
-- Вкажи, як налаштувати dev-сервер на порт 3000.
-  Виведи чіткий покроковий список команд у терміналі, які треба виконати для встановлення залежностей та першого запуску обох частин локально."_ 2. _"У мене повністю реалізовано додаток Inventory Mini System: backend (Node/Prisma/SQLite на 4000) та frontend (Vite/React на 3000). Допоможи налаштувати Dockerfile для обох частин та кореневий docker-compose.yml."_ 3. _"CreateProduct is a type and must be imported using a type-only import when verbatimModuleSyntax is enabled. Як це виправити?"\_
+     Ініціалізуй Node.js + TypeScript + Express.js.
+     Надай базовий package.json зі скриптами ("build", "start", "dev") та необхідними залежностями (express, cors, dotenv, ts-node-dev, typescript, @types/node, @types/express, @types/cors).
+     Надай tsconfig.json.
+     Надай інструкцію і конфіг для ініціалізації Prisma з провайдером SQLite.
+     Створи мінімальний src/index.ts, який просто слухає порт 4000 і повертає статус сервера.
+     Для папки /frontend:
+     Напиши одну консольну команду для швидкого розгортання React + TypeScript (через Vite) у папку frontend.
+     Вкажи, як налаштувати dev-сервер на порт 3000.
+     Виведи чіткий покроковий список команд у терміналі, які треба виконати для встановлення залежностей та першого запуску обох частин локально.
+
+  "_ 2. _"У мене повністю реалізовано додаток Inventory Mini System: backend (Node/Prisma/SQLite на 4000) та frontend (Vite/React на 3000). Допоможи налаштувати Dockerfile для обох частин та кореневий docker-compose.yml."\_
+
 - **What I changed manually:**
   - Decoupled logic from single-file scripts into distinct service and utility layers.
   - Fine-tuned styles, light-theme contrast, and table borders inside CSS Modules.
