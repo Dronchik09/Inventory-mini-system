@@ -6,12 +6,12 @@
 
 ## ⚡ Tech Stack
 
-| Domain | Technologies & Libraries |
-| :--- | :--- |
+| Domain       | Technologies & Libraries                                       |
+| :----------- | :------------------------------------------------------------- |
 | **Frontend** | React 18, Vite, TypeScript, TanStack Query, Axios, CSS Modules |
-| **Backend** | Node.js (v20), Express.js, TypeScript, Prisma ORM |
-| **Database** | SQLite |
-| **DevOps** | Docker, Docker Compose *(configuration files)* |
+| **Backend**  | Node.js (v20), Express.js, TypeScript, Prisma ORM              |
+| **Database** | SQLite                                                         |
+| **DevOps**   | Docker, Docker Compose _(configuration files)_                 |
 
 ---
 
@@ -82,12 +82,12 @@ The `status` field is automatically determined based on the current `quantity`:
 
 All endpoints are prefixed under `/products` and communicate using JSON format.
 
-| Method | Route | Description | Request Body |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/products` | Fetch all products | None |
-| `POST` | `/products` | Create a new product | `{ "name": string, "quantity": number, "price": number }` |
-| `PATCH` | `/products/:id` | Update product details / quantity | `{ "name"?: string, "quantity"?: number, "price"?: number }` |
-| `DELETE` | `/products/:id` | Delete a product | None |
+| Method   | Route           | Description                       | Request Body                                                 |
+| :------- | :-------------- | :-------------------------------- | :----------------------------------------------------------- |
+| `GET`    | `/products`     | Fetch all products                | None                                                         |
+| `POST`   | `/products`     | Create a new product              | `{ "name": string, "quantity": number, "price": number }`    |
+| `PATCH`  | `/products/:id` | Update product details / quantity | `{ "name"?: string, "quantity"?: number, "price"?: number }` |
+| `DELETE` | `/products/:id` | Delete a product                  | None                                                         |
 
 ---
 
@@ -96,12 +96,14 @@ All endpoints are prefixed under `/products` and communicate using JSON format.
 > **Note on Docker:** Docker configurations (`Dockerfile`, `docker-compose.yml`) are fully constructed and validated for containerized environments. However, due to system-level CPU virtualization restrictions on the local workstation, the system is executed and demonstrated via native Node.js processes.
 
 ### 1. Prerequisites
+
 - **Node.js** (v18.x or v20.x)
 - **npm** (v9.x or v10.x)
 
 ---
 
 ### 2. Backend Setup
+
 From the project root:
 
 ```bash
@@ -111,12 +113,13 @@ npx prisma db push
 npm run dev
 ```
 
-* Backend server runs on: `http://localhost:4000`
-* Test endpoint: `http://localhost:4000/products`
+- Backend server runs on: `http://localhost:4000`
+- Test endpoint: `http://localhost:4000/products`
 
 ---
 
 ### 3. Frontend Setup
+
 In a separate terminal window from the project root:
 
 ```bash
@@ -125,7 +128,7 @@ npm install
 npm run dev
 ```
 
-* Frontend client runs on: `http://localhost:3000` (or `http://localhost:5173`)
+- Frontend client runs on: `http://localhost:3000` (or `http://localhost:5173`)
 
 ---
 
@@ -160,9 +163,18 @@ npm run dev
   - Resolving TypeScript import errors (`verbatimModuleSyntax` / `ts(1484)`).
   - Refining responsive layouts with CSS Modules.
 - **2–3 example prompts:**
-  1. *"Set up a clean modular architecture for an Express + TypeScript + Prisma project with separate routes, controllers, services, and utils."*
-  2. *"У мене повністю реалізовано додаток Inventory Mini System: backend (Node/Prisma/SQLite на 4000) та frontend (Vite/React на 3000). Допоможи налаштувати Dockerfile для обох частин та кореневий docker-compose.yml."*
-  3. *"CreateProduct is a type and must be imported using a type-only import when verbatimModuleSyntax is enabled. Як це виправити?"*
+  1. \_"Я починаю full-stack проєкт з нуля. У мене є дві порожні папки: /backend та /frontend.
+     Мені потрібна ТІЛЬКИ початкова збірка та конфігурація оточення (без бізнес-логіки та CRUD-функціоналу).
+     Для папки /backend:
+- Ініціалізуй Node.js + TypeScript + Express.js.
+- Надай базовий package.json зі скриптами ("build", "start", "dev") та необхідними залежностями (express, cors, dotenv, ts-node-dev, typescript, @types/node, @types/express, @types/cors).
+- Надай tsconfig.json.
+- Надай інструкцію і конфіг для ініціалізації Prisma з провайдером SQLite.
+- Створи мінімальний src/index.ts, який просто слухає порт 4000 і повертає статус сервера.
+  Для папки /frontend:
+- Напиши одну консольну команду для швидкого розгортання React + TypeScript (через Vite) у папку frontend.
+- Вкажи, як налаштувати dev-сервер на порт 3000.
+  Виведи чіткий покроковий список команд у терміналі, які треба виконати для встановлення залежностей та першого запуску обох частин локально."_ 2. _"У мене повністю реалізовано додаток Inventory Mini System: backend (Node/Prisma/SQLite на 4000) та frontend (Vite/React на 3000). Допоможи налаштувати Dockerfile для обох частин та кореневий docker-compose.yml."_ 3. _"CreateProduct is a type and must be imported using a type-only import when verbatimModuleSyntax is enabled. Як це виправити?"\_
 - **What I changed manually:**
   - Decoupled logic from single-file scripts into distinct service and utility layers.
   - Fine-tuned styles, light-theme contrast, and table borders inside CSS Modules.
