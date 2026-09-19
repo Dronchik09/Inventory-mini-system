@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: inventory_backend
+    ports:
+      - "4000:4000"
+    volumes:
+      # Зберігаємо файл бази SQLite між перезапусками контейнера
+      - ./backend/prisma:/app/prisma
+    environment:
+      - PORT=4000
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: inventory_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
